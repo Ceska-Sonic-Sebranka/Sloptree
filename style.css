@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+    height: 110vh;
+    background-color: #222222;
+    font-family: 'Lato', sans-serif;
+}
+
+.whole-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    background-color: #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    margin-top: 50px;
+}
+
+.profile{
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 2vw;
+}
+
+.profile h1{
+    font-size: 3vw;
+    margin-bottom: -5px;
+}
+
+.profile p{
+    font-size: 1.5vw;
+    color: #cccccc;
+    margin-bottom: -20px;
+}
+
+.profile img{
+    margin-top: 40px;
+    width: 25vh;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: -30px;
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.buttons-container button{
+    background-color: #555555;
+    width: 90%;
+    color: white;
+    border: none;
+    padding: 15px 30px 15px calc(5vh + 20px);
+    margin: 10px 0;
+    font-size: 2vw;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+}
+
+.buttons-container button:hover{
+    background-color: #777777;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.buttons-container button a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    vertical-align: middle;
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+}
+
+.buttons-container img{
+    width: 5vh;
+    height: auto;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Media Queries for responsiveness */
+/* For phones */
+@media screen and (max-width: 768px) {
+    .whole-container{
+        width: 80%;
+    }
+    .profile h1{
+        font-size: 11vw;
+    }
+    .profile p{
+        font-size: 5vw;
+    }
+    .buttons-container button{
+        font-size: 4vw;
+    }
+
+    .profile img{
+        width: 20vh;
+    }
+
+}
+
+/* For tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .whole-container{
+        width: 60%;
+    }
+    .profile h1{
+        font-size: 6vw;
+    }
+    .profile p{
+        font-size: 3vw;
+    }
+    .buttons-container button{
+        font-size: 2.5vw;
+    }
+
+    .profile img{
+        width: 22vh;
+    }
+}
