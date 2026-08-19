@@ -1,0 +1,5 @@
+# This file causes everything in this directory to be ignored by Git
+# Run `npm run make-config` to set up the required files
+
+*
+!.gitignore

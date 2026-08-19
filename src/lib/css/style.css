@@ -1,26 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-body{
-    height: 110vh;
+body {
+    margin: 0;
+    min-height: 100vh;
     background-color: #222222;
+    overflow: auto;
     font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
 }
 
-.whole-container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.whole-container {
     align-items: center;
     justify-content: center;
     width: 30%;
     background-color: #333333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
-    margin-top: 50px;
+    margin: 50px 0;
+    box-sizing: border-box;
 }
 
-.profile{
+.profile {
     text-align: center;
     color: white;
     padding: 20px;
@@ -28,18 +30,18 @@ body{
     font-size: 2vw;
 }
 
-.profile h1{
+.profile h1 {
     font-size: 3vw;
     margin-bottom: -5px;
 }
 
-.profile p{
+.profile p {
     font-size: 1.5vw;
     color: #cccccc;
     margin-bottom: -20px;
 }
 
-.profile img{
+.profile img {
     margin-top: 40px;
     width: 25vh;
     height: auto;
@@ -48,7 +50,7 @@ body{
     margin-bottom: -30px;
 }
 
-.buttons-container{
+.buttons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,10 +58,14 @@ body{
     margin-bottom: 30px;
 }
 
-.buttons-container button{
+.buttons-container a {
+    display: block;
     background-color: #555555;
     width: 90%;
     color: white;
+    font-weight: bold;
+    text-decoration: none;
+    box-sizing: border-box;
     border: none;
     padding: 15px 30px 15px calc(5vh + 20px);
     margin: 10px 0;
@@ -74,49 +80,51 @@ body{
     gap: 10px;
 }
 
-.buttons-container button:hover{
+.buttons-container a:hover {
     background-color: #777777;
     transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
-.buttons-container button a{
+.buttons-container a span {
     text-decoration: none;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     vertical-align: middle;
     flex: 1;
     padding-left: 0;
     text-align: center;
 }
 
-.buttons-container img{
-    width: 5vh;
-    height: auto;
+.buttons-container .icon {
     position: absolute;
+    aspect-ratio: 1/1;
     left: 15px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0.8);
 }
 
 /* Media Queries for responsiveness */
 /* For phones */
 @media screen and (max-width: 768px) {
-    .whole-container{
+    .whole-container {
         width: 80%;
     }
-    .profile h1{
+
+    .profile h1 {
         font-size: 11vw;
     }
-    .profile p{
+
+    .profile p {
         font-size: 5vw;
     }
-    .buttons-container button{
+
+    .buttons-container button {
         font-size: 4vw;
     }
 
-    .profile img{
+    .profile img {
         width: 20vh;
     }
 
@@ -124,20 +132,23 @@ body{
 
 /* For tablets */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .whole-container{
+    .whole-container {
         width: 60%;
     }
-    .profile h1{
+
+    .profile h1 {
         font-size: 6vw;
     }
-    .profile p{
+
+    .profile p {
         font-size: 3vw;
     }
-    .buttons-container button{
+
+    .buttons-container button {
         font-size: 2.5vw;
     }
 
-    .profile img{
+    .profile img {
         width: 22vh;
     }
 }
