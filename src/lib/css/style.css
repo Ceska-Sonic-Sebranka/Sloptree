@@ -95,13 +95,12 @@ body {
     text-align: center;
 }
 
-.buttons-container img {
-    width: 5vh;
-    height: auto;
+.buttons-container .icon {
     position: absolute;
+    aspect-ratio: 1/1;
     left: 15px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0.8);
 }
 
 /* Media Queries for responsiveness */

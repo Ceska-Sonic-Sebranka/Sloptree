@@ -15,19 +15,16 @@
     };
 
     import profile_picture from "$lib/assets/profile.png";
-
-    import steam from "$lib/assets/icons/steam-icon.webp";
-    import instagram from "$lib/assets/icons/instagram-icon.png";
-    import youtube from "$lib/assets/icons/youtube-icon.png";
-    import github from "$lib/assets/icons/github-icon.svg";
+    import { getIcon } from "$lib/icons";
+    import SvgIcon from "@jamescoyle/svelte-icon";
 
     const title = `${nickname} | Sloptree`;
 
     const links = [
-        ["GitHub", "https://github.com/rodrickhmmm", github],
-        ["YouTube", "https://www.youtube.com/@RodrickPodtrzitko", youtube],
-        ["Instagram", "https://www.instagram.com/rodri.0__o/", instagram],
-        ["Steam", "https://steamcommunity.com/id/rodri_0_o/", steam],
+        ["GitHub", "https://github.com/rodrickhmmm", "siGithub"],
+        ["YouTube", "https://www.youtube.com/@RodrickPodtrzitko", "siYoutube"],
+        ["Instagram", "https://www.instagram.com/rodri.0__o/", "siInstagram"],
+        ["Steam", "https://steamcommunity.com/id/rodri_0_o/", "siSteam"],
     ];
 </script>
 
@@ -59,8 +56,16 @@
 </svelte:head>
 
 {#snippet button(label: string, href: string, icon: string)}
+    {@const { path, hex } = getIcon(icon)}
     <a class="link-button" {href} target="_blank">
-        <img src={icon} alt={label} />
+        <SvgIcon
+            {path}
+            color="#FFF"
+            height="100%"
+            width="fit-content"
+            type="simple-icons"
+            class="icon"
+        />
         <span>{label}</span>
     </a>
 {/snippet}
