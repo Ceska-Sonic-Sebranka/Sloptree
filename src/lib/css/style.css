@@ -31,19 +31,19 @@ body {
 }
 
 .profile h1 {
-    font-size: 3vw;
-    margin-bottom: -5px;
+    font-size: 2vw;
+    margin-top: 50px;
 }
 
 .profile p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     color: #cccccc;
     margin-bottom: -20px;
 }
 
 .profile img {
     margin-top: 40px;
-    width: 25vh;
+    width: 20vh;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -69,7 +69,7 @@ body {
     border: none;
     padding: 15px 30px 15px calc(5vh + 20px);
     margin: 10px 0;
-    font-size: 2vw;
+    font-size: 1vw;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -99,10 +99,14 @@ body {
 
 .buttons-container .icon {
     position: absolute;
+    width: 3vh;
+    height: 3vh;
+    object-fit: contain;
     aspect-ratio: 1/1;
     left: 15px;
     top: 50%;
     transform: translateY(-50%) scale(0.8);
+    filter: brightness(0) invert(1);
 }
 
 /* Media Queries for responsiveness */

@@ -34,17 +34,21 @@
     <meta name="twitter:image" content={profilePicture} />
 </svelte:head>
 
-{#snippet button(label: string, href: string, icon: string)}
-    {@const { path, hex } = getIcon(icon)}
+{#snippet button(label: string, href: string, iconName: string)}
+    {@const icon = getIcon(iconName)}
     <a class="link-button" {href} target="_blank">
-        <SvgIcon
-            {path}
-            color="#FFF"
-            height="100%"
-            width="fit-content"
-            type="simple-icons"
-            class="icon"
-        />
+        {#if icon.kind === "url"}
+            <img src={icon.src} alt="" class="icon url-icon" />
+        {:else}
+            <SvgIcon
+                path={icon.path}
+                color="#FFF"
+                height="100%"
+                width="fit-content"
+                type="simple-icons"
+                class="icon"
+            />
+        {/if}
         <span>{label}</span>
     </a>
 {/snippet}
