@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"make-config": "node ./scripts/make-config.js --dev",
-		"build": "vite build",
+		"build": "node ./scripts/make-config.js && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
