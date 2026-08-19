@@ -113,7 +113,7 @@ body {
 /* Media Queries for responsiveness */
 @media screen and (max-width: 1024px) {
     .whole-container {
-        width: 72%;
+        width: 75%;
         margin: 30px auto;
     }
 }
@@ -121,14 +121,18 @@ body {
 /* For phones */
 @media screen and (max-width: 768px) {
     .whole-container {
-        width: 70%;
+        width: 90%;
         margin: 20px auto;
     }
 
     .profile p {
-        font-size: clamp(0.55em, 1.6vh, 0.9em);
+        font-size: clamp(0.7em, 1.9vh, 1em);
         margin-top: 0px;
         margin-bottom: -40px;
+    }
+
+    .profile h1 {
+        font-size: clamp(1.1em, 3.3vh, 1.7em);
     }
 
 }
