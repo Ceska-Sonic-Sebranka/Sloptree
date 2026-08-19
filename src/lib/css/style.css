@@ -37,7 +37,8 @@ body {
 }
 
 .profile p {
-    font-size: clamp(0.75rem, 1.2vw, 1.1rem);
+    font-size: 1.2rem;
+    line-height: 1.5;
     color: #cccccc;
     margin-bottom: -20px;
 }
@@ -126,7 +127,7 @@ body {
     }
 
     .profile p {
-        font-size: clamp(0.8rem, 1.8vw, 1rem);
+        font-size: 0.9rem;
         margin-top: 0px;
         margin-bottom: -40px;
     }
