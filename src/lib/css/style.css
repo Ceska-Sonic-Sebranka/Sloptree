@@ -14,11 +14,12 @@ body {
 .whole-container {
     align-items: center;
     justify-content: center;
-    width: 30%;
+    max-width: 540px;
+    width: 52%;
     background-color: #333333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
-    margin: 50px 0;
+    margin: 50px auto;
     box-sizing: border-box;
 }
 
@@ -27,16 +28,16 @@ body {
     color: white;
     padding: 20px;
     border-radius: 20px;
-    font-size: 2vw;
+    font-size: clamp(1em, 2.1vh, 2em);
 }
 
 .profile h1 {
-    font-size: 2vw;
+    font-size: clamp(1.1em, 3.5vh, 1.8em);
     margin-top: 50px;
 }
 
 .profile p {
-    font-size: 1vw;
+    font-size: clamp(0.7em, 1.8vh, 1.1em);
     color: #cccccc;
     margin-bottom: -20px;
 }
@@ -69,7 +70,7 @@ body {
     border: none;
     padding: 15px 30px 15px calc(5vh + 20px);
     margin: 10px 0;
-    font-size: 1vw;
+    font-size: clamp(0.9em, 2.2vh, 1.3em);
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -110,49 +111,24 @@ body {
 }
 
 /* Media Queries for responsiveness */
+@media screen and (max-width: 1024px) {
+    .whole-container {
+        width: 72%;
+        margin: 30px auto;
+    }
+}
+
 /* For phones */
 @media screen and (max-width: 768px) {
     .whole-container {
-        width: 80%;
-    }
-
-    .profile h1 {
-        font-size: 11vw;
+        width: 70%;
+        margin: 20px auto;
     }
 
     .profile p {
-        font-size: 5vw;
+        font-size: clamp(0.55em, 1.6vh, 0.9em);
+        margin-top: 0px;
+        margin-bottom: -40px;
     }
 
-    .buttons-container button {
-        font-size: 4vw;
-    }
-
-    .profile img {
-        width: 20vh;
-    }
-
-}
-
-/* For tablets */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .whole-container {
-        width: 60%;
-    }
-
-    .profile h1 {
-        font-size: 6vw;
-    }
-
-    .profile p {
-        font-size: 3vw;
-    }
-
-    .buttons-container button {
-        font-size: 2.5vw;
-    }
-
-    .profile img {
-        width: 22vh;
-    }
 }
