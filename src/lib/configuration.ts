@@ -9,6 +9,7 @@ type ConfigData = {
     color: string,
     canonicalUrl: string,
     locale: string,
+    theme: string,
     links: {
         label: string,
         href: string,

@@ -22,6 +22,7 @@ if (process.argv[2] === "--dev") {
     "color": "#600afe",
     "canonicalUrl": "https://example.com/",
     "locale": "en_US",
+    "theme": "default",
     "links": [
         {
             "label": "Example",
