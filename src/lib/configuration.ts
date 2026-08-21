@@ -1,5 +1,6 @@
 // use `npm run make-config` if these imports do not work
 import importDataJson from "../configuration/data.json";
+import "../configuration/theme.css";
 const importProfilePicture = Object.values(import.meta.glob<{ default: string }>('../configuration/pfp.*', { eager: true }))[0]?.default ?? "";
 
 type ConfigData = {
@@ -19,4 +20,3 @@ type ConfigData = {
 
 export const data: ConfigData = importDataJson as ConfigData;
 export const profilePicture = importProfilePicture;
-
