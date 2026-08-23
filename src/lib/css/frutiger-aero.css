@@ -13,6 +13,9 @@ body {
 }
 
 .whole-container {
+    position: relative;   /* anchors the ::before pseudo-element */
+    overflow: hidden;     /* clips it to the card's rounded shape */
+
     align-items: center;
     justify-content: center;
     max-width: 540px;
@@ -52,7 +55,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 50%;
+  border-radius: 30px; /* match .whole-container, not 50% */
+  padding: 3px; /* ring thickness */
   background: conic-gradient(
     from 200deg,
     rgba(255, 150, 150, 0.55),
@@ -63,8 +67,11 @@ body {
     rgba(255, 150, 220, 0.55),
     rgba(255, 150, 150, 0.55)
   );
-  -webkit-mask-image: radial-gradient(circle, transparent 82%, black 87%, black 97%, transparent 100%);
-  mask-image: radial-gradient(circle, transparent 82%, black 87%, black 97%, transparent 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   mix-blend-mode: screen;
   pointer-events: none;
 }
