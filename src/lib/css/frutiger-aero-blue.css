@@ -1,0 +1,297 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("https://frutigeraeroarchive.org/images/wallpapers/liam/liam_12.jpg");
+    background-size:cover;
+    background-position: center;
+    overflow: auto;
+    font-family: "Segoe UI", Tahoma, "Segoe UI Web", system-ui, sans-serif;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+}
+
+.whole-container {
+    position: relative;   /* anchors the ::before pseudo-element */
+    overflow: hidden;     /* clips it to the card's rounded shape */
+
+    align-items: center;
+    justify-content: center;
+    max-width: 540px;
+    width: 52%;
+
+    --hue: 245;
+    --sat: 0.15;
+    --gloss: 0.7;
+
+    /* Thin-film glass fill — mostly transparent, faintly tinted */
+    background:
+        radial-gradient(circle at 30% 25%, rgba(28, 107, 255, 0.78), transparent 22%),
+        radial-gradient(circle at 68% 74%, rgba(255, 255, 255, 0.12), transparent 35%),
+        radial-gradient(circle at 68% 80%, rgba(5, 113, 255, 0.78), transparent 35%),
+        radial-gradient(
+        circle at 50% 50%,
+        oklch(95% var(--sat) var(--hue) / 0.12),
+        oklch(85% var(--sat) var(--hue) / 0.04) 70%,
+        transparent 100%
+        );
+    background-color: oklch(95% var(--sat) var(--hue) / 0.12);
+    
+
+    /* Rim-lit glass edge, no heavy depth shadow like a solid sphere */
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+        inset -6px -6px 16px rgba(255, 255, 255, 0.18),
+        inset 6px 10px 22px rgba(0, 0, 0, 0.06),
+        0 6px 16px rgba(0, 0, 0, 0.12);
+
+    border-radius: 30px;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+
+.whole-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px; /* match .whole-container, not 50% */
+  padding: 3px; /* ring thickness */
+  background: conic-gradient(
+    from 200deg,
+    rgba(255, 150, 150, 0.55),
+    rgba(255, 220, 140, 0.55),
+    rgba(170, 255, 180, 0.55),
+    rgba(140, 220, 255, 0.55),
+    rgba(190, 150, 255, 0.55),
+    rgba(255, 150, 220, 0.55),
+    rgba(255, 150, 150, 0.55)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.profile {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: clamp(1rem, 1.6vw, 2rem);
+}
+
+.profile h1 {
+    font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+    text-shadow: 1em rgba(0, 0, 0, 0.993);
+    margin-top: 50px;
+}
+
+.profile p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #cccccc;
+    margin-bottom: -20px;
+    text-shadow: 1em rgba(0, 0, 0, 0.993);
+}
+
+.profile img {
+    margin-top: 40px;
+    width: 20vh;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: -30px;
+    padding: 5px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5),  rgba(255, 255, 255, 0.5), rgba(75, 97, 129, 0.575), rgba(255, 255, 255, 0.5));
+    background-clip: border-box;
+
+    box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+    inset -6px -6px 16px rgba(255, 255, 255, 0.18),
+    inset 6px 10px 22px rgba(0, 0, 0, 0.06),
+    0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.buttons-container a {
+    display: block;
+    --hue: 245;
+    --sat: 0.36;
+    --glow-intensity: 0.55;
+
+    /* Color Variables */
+    --fg: oklch(15% calc(var(--sat) * 0.5) var(--hue));
+    --bg: oklch(75% var(--sat) var(--hue) / 0.8);
+    --bg-dark: oklch(45% var(--sat) var(--hue) / 0.75);
+    --bottom-glow: radial-gradient(
+        farthest-corner at bottom center,
+        rgba(255, 255, 255, var(--glow-intensity)),
+        transparent
+    );
+
+    background-color: var(--bg);
+    background: var(--bottom-glow), linear-gradient(to bottom, var(--bg-dark), var(--bg));
+    border: 1px solid var(--bg);
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    color: var(--fg);
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 15px 30px 15px calc(5vh + 20px);
+    margin: 10px 0;
+    font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+    cursor: pointer;
+    transition: all 300ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+}
+
+/* Diagonal Glass Shine Sweep — the classic Web 2.0 glare streak */
+.buttons-container a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Top Highlight Effect */
+.buttons-container a::after {
+  content: "";
+  position: absolute;
+  top: 4%;
+  left: 0.75em;
+  width: calc(100% - 1.5em);
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: inherit;
+  transition: background 400ms ease;
+  pointer-events: none;
+}
+
+.buttons-container a:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  background-color: #3f8cff7e;
+  transform: translateY(-5px);
+  transition: all 100ms ease-in-out;
+}
+
+.buttons-container a span {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+}
+
+.buttons-container .icon {
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    filter: brightness(0) invert(1);
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 1024px) {
+    .whole-container {
+        width: 75%;
+        margin: 30px auto;
+    }
+}
+
+/* For phones */
+@media screen and (max-width: 768px) {
+    .whole-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .profile p {
+        font-size: 0.9rem;
+        margin-top: 0px;
+        margin-bottom: -40px;
+    }
+
+    .profile h1 {
+        font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .whole-container {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .link-button .icon {
+        filter: invert();
+    }
+
+    .profile {
+        color: #111111;
+    }
+
+    .profile p {
+        color: #444444;
+    }
+
+    .buttons-container a {
+        background-color: #dddddd;
+        color: #000000;
+    }
+
+    .buttons-container a:hover {
+        background-color: #eeeeee;
+    }
+
+    .buttons-container a:active {
+        background-color: #cccccc;
+    }
+
+    .buttons-container a span {
+        color: #333333;
+    }
+}
