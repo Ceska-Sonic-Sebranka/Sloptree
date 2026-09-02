@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    overflow: auto;
+    font-family: 'Jost', sans-serif;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+}
+
+.whole-container {
+    align-items: center;
+    justify-content: center;
+    max-width: 540px;
+    width: 52%;
+    background-color: #121212;
+    border-radius: 5px;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+
+.profile {
+    text-align: center;
+    color: #ffffea;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: clamp(1rem, 1.6vw, 2rem);
+}
+
+.profile h1 {
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    margin-top: 50px;
+    font-weight: 1000;
+}
+
+.profile p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: -20px;
+    font-style: italic;
+}
+
+.profile img {
+    margin-top: 40px;
+    width: 20vh;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: -30px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.buttons-container a {
+    display: block;
+    background-color: #242424;
+    width: 90%;
+    color: #ffffea;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    padding: 15px 30px 15px calc(5vh + 20px);
+    margin: 10px 0;
+    font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+}
+
+.buttons-container a:hover {
+    background-color: #41413d;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.buttons-container a span {
+    text-decoration: none;
+    color: #ffffea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+}
+
+.buttons-container .icon {
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    filter: brightness(0) invert(1);
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 1024px) {
+    .whole-container {
+        width: 75%;
+        margin: 30px auto;
+    }
+}
+
+/* For phones */
+@media screen and (max-width: 768px) {
+    .whole-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .profile p {
+        font-size: 0.9rem;
+        margin-top: 0px;
+        margin-bottom: -40px;
+    }
+
+    .profile h1 {
+        font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .whole-container {
+        background-color: #ffffff;
+    }
+
+    .link-button .icon {
+        filter: invert();
+    }
+
+    .profile {
+        color: #111111;
+    }
+
+    .profile p {
+        color: #444444;
+    }
+
+    .buttons-container a {
+        background-color: #dddddd;
+        color: #000000;
+    }
+
+    .buttons-container a:hover {
+        background-color: #eeeeee;
+    }
+
+    .buttons-container a:active {
+        background-color: #cccccc;
+    }
+
+    .buttons-container a span {
+        color: #333333;
+    }
+}
